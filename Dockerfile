@@ -14,6 +14,7 @@ COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
 COPY --from=frontend-build /app/frontend/dist ./frontend/dist
+RUN ls -la ./cmd/ ./cmd/server/ ./cmd/seed/
 ENV CGO_ENABLED=1
 RUN go build -o server ./cmd/server
 RUN go build -o seed ./cmd/seed
