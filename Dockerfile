@@ -7,7 +7,7 @@ COPY frontend/ ./
 RUN npm run build
 
 # ---- Stage 2: Build backend ----
-FROM golang:1.25-alpine AS backend-build
+FROM golang:1.25-alpine3.22 AS backend-build
 RUN apk add --no-cache gcc musl-dev
 WORKDIR /app
 COPY go.mod go.sum ./
@@ -19,7 +19,7 @@ RUN go build -o server ./cmd/server
 RUN go build -o seed ./cmd/seed
 
 # ---- Stage 3: Runtime ----
-FROM alpine:3.21
+FROM alpine:3.22
 RUN apk add --no-cache ca-certificates tzdata
 WORKDIR /app
 COPY --from=backend-build /app/server .
