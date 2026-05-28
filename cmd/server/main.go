@@ -31,8 +31,10 @@ func main() {
 	r.Use(corsMiddleware())
 
 	// Serve static files (React build)
-	r.Static("/static", "./frontend/dist/assets")
+	r.Static("/assets", "./frontend/dist/assets")
 	r.StaticFile("/", "./frontend/dist/index.html")
+	r.StaticFile("/favicon.svg", "./frontend/dist/favicon.svg")
+	r.StaticFile("/icons.svg", "./frontend/dist/icons.svg")
 	r.NoRoute(func(c *gin.Context) {
 		c.File("./frontend/dist/index.html")
 	})
