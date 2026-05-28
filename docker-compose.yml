@@ -1,6 +1,6 @@
 services:
   cook:
-    build: .
+    image: ghcr.io/ailiyy/cook:latest
     container_name: cook
     ports:
       - "18080:8080"
