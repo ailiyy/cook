@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-warm-50: #fdfcfb;
+  --color-warm-100: #f8f6f3;
+  --color-warm-200: #f0ece6;
+  --color-warm-300: #e2dbd1;
+  --color-warm-400: #c4b9a9;
+  --color-warm-500: #a69a88;
+  --color-warm-600: #8a7e6d;
+  --color-warm-700: #6e6457;
+  --color-warm-800: #534b41;
+  --color-warm-900: #3a342d;
+
+  --color-accent-50: #fff8f0;
+  --color-accent-100: #ffefd9;
+  --color-accent-200: #ffdbb3;
+  --color-accent-300: #ffc180;
+  --color-accent-400: #ffa04d;
+  --color-accent-500: #e8842a;
+  --color-accent-600: #c66a1a;
+  --color-accent-700: #a05214;
+  --color-accent-800: #7a3e10;
+  --color-accent-900: #5c2f0c;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans SC', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-warm-50);
+  color: var(--color-warm-900);
+}
+
+* {
+  transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent-200);
+  border-color: var(--color-accent-400);
+}
+
+::selection {
+  background-color: var(--color-accent-100);
+  color: var(--color-accent-900);
+}

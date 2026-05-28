@@ -1,0 +1,13 @@
+services:
+  cook:
+    build: .
+    container_name: cook
+    ports:
+      - "18080:8080"
+    volumes:
+      - /vol1/1000/docker/cook/cook-data:/data
+    environment:
+      - PORT=8080
+      - DATABASE_PATH=/data/cook.db
+      - JWT_SECRET=eP2br7FlWeHq3vFrsfu0sNmN7nnoIjy/vBOGaKYtsD8=
+    restart: unless-stopped
